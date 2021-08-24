@@ -1,31 +1,14 @@
-﻿namespace MyWebAPI.Extensions
+﻿namespace ServicesExtension.DatabaseSeederProvider
 {
     using Contracts;
-    using Entities;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using Repository;
-    using Microsoft.EntityFrameworkCore;
-    using System.Collections.Generic;
     using Entities.Models;
+    using Microsoft.Extensions.DependencyInjection;
     using System;
-    using Microsoft.AspNetCore.Builder;
+    using System.Collections.Generic;
 
-    public static class ServiceExtensions
+    public static class SQLServerDbSeeder
     {
-        public static void ConfigureSqlServerContext(this IServiceCollection services, IConfiguration config)
-        {
-            services.AddDbContext<RepositoryContext>(options => options.UseSqlServer(
-                config.GetConnectionString("DefaultConnection")));
-        }
-
-        public static void ConfigureRepositoryWrapper(this IServiceCollection services)
-        {
-            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
-
-        }
-
-        public static void ConfigureRepositoryWrapperAddData(this IServiceCollection services)
+        public static void AddDataInRepositoryWrapper(this IServiceCollection services)
         {
             var theService = services.BuildServiceProvider().GetService<IRepositoryWrapper>();
 
