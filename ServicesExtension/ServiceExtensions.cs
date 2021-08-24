@@ -19,6 +19,7 @@ namespace ServicesExtension
         {
             // 1    -   Providers Configuration
             services.ConfigureSqlServerContext(configuration);
+            services.ConfigureSqlLiteServerContextAsync(configuration);
 
             // 2    -   Configure Repository Wrapper.
             services.ConfigureRepositoryWrapper();
