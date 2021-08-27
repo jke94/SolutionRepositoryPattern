@@ -1,4 +1,4 @@
-﻿namespace Contracts
+﻿namespace Repository.Interfaces
 {
     using System;
 

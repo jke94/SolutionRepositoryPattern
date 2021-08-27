@@ -1,8 +1,8 @@
 ﻿namespace ServicesExtension.RespositoryWrapperConfiguration
 {
-    using Contracts;
     using Microsoft.Extensions.DependencyInjection;
     using Repository;
+    using Repository.Interfaces;
 
     public static class RepoWrapperConfig
     {

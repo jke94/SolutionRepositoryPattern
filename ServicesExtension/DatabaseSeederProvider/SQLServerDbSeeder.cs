@@ -1,8 +1,8 @@
 ﻿namespace ServicesExtension.DatabaseSeederProvider
 {
-    using Contracts;
     using Entities.Models;
     using Microsoft.Extensions.DependencyInjection;
+    using Repository.Interfaces;
     using System;
     using System.Collections.Generic;
 

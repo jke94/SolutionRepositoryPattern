@@ -1,7 +1,7 @@
 ﻿namespace MyWebAPI.Controllers
 {
-    using Contracts;
     using Microsoft.AspNetCore.Mvc;
+    using Repository.Interfaces;
     using System.Collections.Generic;
 
     [ApiController]

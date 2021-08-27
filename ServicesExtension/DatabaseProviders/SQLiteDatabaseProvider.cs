@@ -8,7 +8,7 @@
 
     public static class SQLiteDatabaseProvider
     {
-        public static async Task ConfigureSqlLiteServerContextAsync(this IServiceCollection services, IConfiguration config)
+        public static void ConfigureSqlLiteServerContextAsync(this IServiceCollection services, IConfiguration config)
         {
             services.AddDbContext<RepositoryContext>(options => options.UseSqlite(
                 config.GetConnectionString("SQLiteDefaultConnection")));
@@ -17,7 +17,6 @@
             {
                 var context = servicesProvider.GetRequiredService<RepositoryContext>();
 
-                await context.Database.MigrateAsync();
                 context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
 

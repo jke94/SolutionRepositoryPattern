@@ -1,13 +1,12 @@
-﻿using Contracts;
-using Entities;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-
-namespace Repository
+﻿namespace Repository
 {
+    using Entities;
+    using Microsoft.EntityFrameworkCore;
+    using Repository.Interfaces;
+    using System;
+    using System.Linq;
+    using System.Linq.Expressions;
+
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
         protected RepositoryContext RepositoryContext { get; set; }
