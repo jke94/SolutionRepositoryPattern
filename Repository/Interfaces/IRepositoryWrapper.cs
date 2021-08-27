@@ -1,6 +1,5 @@
 ﻿namespace Repository.Interfaces
 {
-    using System;
 
     public interface IRepositoryWrapper
     {

@@ -2,7 +2,7 @@
 {
     using Entities.Models;
 
-    public interface IAccountRepository : IRepositoryBase<Account>
+    public interface IDoctorRepository : IRepositoryBase<Doctor>
     {
     }
 }

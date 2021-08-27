@@ -5,18 +5,26 @@
 
     public class RepositoryContext : DbContext
     {
-        public RepositoryContext(DbContextOptions options)
-            : base(options)
-        {
-        }
+        //public RepositoryContext(DbContextOptions options)
+        //    : base(options)
+        //{
+        //}
 
         public DbSet<Owner> Owners { get; set; }
+
         public DbSet<Account> Accounts { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Initial Catalog=SolutionRepositoryPatternDB;Trusted_Connection=True;");
-        //}
+        public DbSet<Doctor> Doctors { get; set; }
+
+        public DbSet<Patient> Patients { get; set; }
+
+        public DbSet<MedicalTreatment> MedicalTreatments { get; set; }
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Initial Catalog=SolutionRepositoryPatternDB;Trusted_Connection=True;");
+        }
 
     }
 }

@@ -1,7 +1,7 @@
-﻿using Entities.Models;
-
-namespace Repository.Interfaces
+﻿namespace Repository.Interfaces
 {
+    using Entities.Models;
+
     public interface IOwnerRepository : IRepositoryBase<Owner>
     {
     }
