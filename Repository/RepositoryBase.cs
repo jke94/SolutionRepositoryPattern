@@ -1,9 +1,10 @@
 ﻿namespace Repository
 {
-    using Entities;
+    using Entities.Context;
     using Microsoft.EntityFrameworkCore;
     using Repository.Interfaces;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
 
@@ -13,32 +14,40 @@
 
         public RepositoryBase(RepositoryContext repositoryContext)
         {
-            this.RepositoryContext = repositoryContext;
+            RepositoryContext = repositoryContext;
         }
 
         public IQueryable<T> FindAll()
         {
-            return this.RepositoryContext.Set<T>().AsNoTracking();
+            return RepositoryContext.Set<T>().AsNoTracking();
         }
 
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
         {
-            return this.RepositoryContext.Set<T>().Where(expression).AsNoTracking();
+            return RepositoryContext.Set<T>().Where(expression).AsNoTracking();
         }
 
         public void Create(T entity)
         {
-            this.RepositoryContext.Set<T>().Add(entity);
+            RepositoryContext.Set<T>().Add(entity);
+        }
+
+        public void Create(IList<T> entity)
+        {
+            foreach (var item in entity)
+            {
+                RepositoryContext.Set<T>().Add(item);
+            }
         }
 
         public void Update(T entity)
         {
-            this.RepositoryContext.Set<T>().Update(entity);
+            RepositoryContext.Set<T>().Update(entity);
         }
 
         public void Delete(T entity)
         {
-            this.RepositoryContext.Set<T>().Remove(entity);
+            RepositoryContext.Set<T>().Remove(entity);
         }
     }
 }

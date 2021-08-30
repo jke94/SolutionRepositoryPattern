@@ -1,38 +1,52 @@
 ﻿namespace Repository
 {
-    using Entities;
+    using Entities.Context;
     using Repository.Interfaces;
+    using Repository.RepositoryEntities;
 
     public class RepositoryWrapper : IRepositoryWrapper
     {
         private RepositoryContext _repoContext;
-        private IOwnerRepository _owner;
-        private IAccountRepository _account;
+        private IDoctorRepository _doctor;
+        private IPatientRepository _patient;
+        private IMedicalTreatmentRepository _medicalTreatment;
 
-
-        public IOwnerRepository Owner
+        public IPatientRepository Patient
         {
             get
             {
-                if (_owner == null)
+                if (_patient == null)
                 {
-                    _owner = new OwnerRepository(_repoContext);
+                    _patient = new PatientRepository(_repoContext);
                 }
 
-                return _owner;
+                return _patient;
             }
         }
 
-        public IAccountRepository Account
+        public IDoctorRepository Doctor
         {
             get
             {
-                if (_account == null)
+                if (_doctor == null)
                 {
-                    _account = new AccountRepository(_repoContext);
+                    _doctor = new DoctorRepository(_repoContext);
                 }
 
-                return _account;
+                return _doctor;
+            }
+        }
+
+        public IMedicalTreatmentRepository MedicalTreatment
+        {
+            get
+            {
+                if (_medicalTreatment == null)
+                {
+                    _medicalTreatment = new MedicalTreatmentRepository(_repoContext);
+                }
+
+                return _medicalTreatment;
             }
         }
 

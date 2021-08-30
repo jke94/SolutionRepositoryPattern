@@ -1,6 +1,6 @@
 ﻿namespace ServicesExtension.DatabaseProviders
 {
-    using Entities;
+    using Entities.Context;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -9,8 +9,11 @@
     {
         public static void ConfigureSqlServerContext(this IServiceCollection services, IConfiguration config)
         {
-            services.AddDbContext<RepositoryContext>(options => options.UseSqlServer(
-                config.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<RepositoryContext>(options => 
+                {
+                    options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+                }
+            );
 
             using (var servicesProvider = services.BuildServiceProvider())
             {

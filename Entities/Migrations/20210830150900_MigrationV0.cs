@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Entities.Migrations
 {
-    public partial class MigrationV1 : Migration
+    public partial class MigrationV0 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,8 +11,7 @@ namespace Entities.Migrations
                 name: "Doctors",
                 columns: table => new
                 {
-                    DoctorID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DoctorID = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateBorn = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -27,8 +26,7 @@ namespace Entities.Migrations
                 name: "Patients",
                 columns: table => new
                 {
-                    PatientId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PatientId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateBorn = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -50,8 +48,7 @@ namespace Entities.Migrations
                 name: "MedicalTreatments",
                 columns: table => new
                 {
-                    MedicalTreatmentId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MedicalTreatmentId = table.Column<int>(type: "int", nullable: false),
                     Medicine = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Days = table.Column<int>(type: "int", nullable: false),
                     PatientId = table.Column<int>(type: "int", nullable: false)

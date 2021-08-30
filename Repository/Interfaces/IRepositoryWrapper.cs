@@ -1,10 +1,10 @@
 ﻿namespace Repository.Interfaces
 {
-
     public interface IRepositoryWrapper
     {
-        IOwnerRepository Owner { get; }
-        IAccountRepository Account { get; }
+        IDoctorRepository Doctor { get; }
+        IPatientRepository Patient { get; }
+        IMedicalTreatmentRepository MedicalTreatment { get; }
         void Save();
     }
 }

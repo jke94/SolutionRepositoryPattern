@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{B1F7D312-CE3F-49AB-9356-D573F40D9D97}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{63B57CBA-D5F5-4BAE-8B96-E34E8A7E48EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryPattern", "Repository\RepositoryPattern.csproj", "{63B57CBA-D5F5-4BAE-8B96-E34E8A7E48EA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebAPI", "MyWebAPI\MyWebAPI.csproj", "{A6B2649F-DD7E-40D2-BD92-268DBE9A2ACC}"
 EndProject

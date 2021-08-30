@@ -1,6 +1,6 @@
 ﻿namespace ServicesExtension.DatabaseProviders
 {
-    using Entities;
+    using Entities.Context;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -9,8 +9,11 @@
     {
         public static void ConfigureSqlLiteServerContextAsync(this IServiceCollection services, IConfiguration config)
         {
-            services.AddDbContext<RepositoryContext>(options => options.UseSqlite(
-                config.GetConnectionString("SQLiteDefaultConnection")));
+            services.AddDbContext<RepositoryContext>(options =>
+                {
+                    options.UseSqlite(config.GetConnectionString("SQLiteDefaultConnection"));
+                }   
+            );
 
             using (var servicesProvider = services.BuildServiceProvider())
             {
@@ -18,7 +21,6 @@
 
                 context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
-
             }
         }
     }

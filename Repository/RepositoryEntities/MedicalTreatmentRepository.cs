@@ -1,6 +1,6 @@
-﻿namespace Repository
+﻿namespace Repository.RepositoryEntities
 {
-    using Entities;
+    using Entities.Context;
     using Entities.Models;
     using Repository.Interfaces;
 
