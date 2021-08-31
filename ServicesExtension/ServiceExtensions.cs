@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ServicesExtension
+﻿namespace ServicesExtension
 {
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -13,8 +11,8 @@ namespace ServicesExtension
         /// <summary>
         ///     Initialize all services.
         /// </summary>
-        /// <param name="services"></param>
-        /// <param name="configuration"></param>
+        /// <param name="services">Services collection</param>
+        /// <param name="configuration">Configuration section</param>
         public static void InitializeAllApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
             // 1    -   Providers Configuration

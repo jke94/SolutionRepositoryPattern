@@ -1,12 +1,11 @@
 ﻿namespace ServicesExtension.DatabaseSeederProvider.DataSeeded
 {
     using Entities.Models;
-    using ServicesExtension.DatabaseSeederProvider;
     using System;
 
     public static class MedicalTreatmentDataSeeded
     {
-        public static string[] medicineNames =
+        public static string [] medicineNames =
         {
             "Paracetamol",     "Aspirina",      "Ibuprofeno",       "Morfine",      "Azodermol",
             "Omeprazonl",      "Ramipril",      "Amoxicilina",      "Glucagón",     "Idarubicin",
@@ -14,10 +13,13 @@
             "Elocon",          "Flomax",        "Ketek",            "relpax",       "Sancuso"
         };
 
-        internal static MedicalTreatment[] GenerateMedicalTreatment()
+        /// <summary>
+        ///     Generate randon names to seed in database.
+        /// </summary>
+        /// <returns>An array of medical treatments.</returns>
+        public static MedicalTreatment [] GenerateMedicalTreatment()
         {
             MedicalTreatment[] arrayPatient = new MedicalTreatment[SharedVariables.NumberOfMedicalTreatments];
-
 
             Random random = new Random();
 
@@ -31,17 +33,6 @@
                     PatientId = random.Next(1, SharedVariables.NumberOfPatients)
                 };
             }
-
-            //arrayPatient = new MedicalTreatment[]
-            //{
-            //    new MedicalTreatment()
-            //    {
-            //        Medicine = "Paracetamol",
-            //        Days = 8,
-                    
-            //    }
-            //}
-
 
             return arrayPatient;
         }

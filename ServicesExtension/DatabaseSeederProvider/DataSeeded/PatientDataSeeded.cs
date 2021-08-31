@@ -1,20 +1,19 @@
 ﻿namespace ServicesExtension.DatabaseSeederProvider.DataSeeded
 {
     using Entities.Models;
-    using ServicesExtension.DatabaseSeederProvider;
     using System;
 
     public static class PatientDataSeeded
     {
-        public static string[] names =
-{
+        public static string [] names =
+        {
             "Jack",     "Jasper",   "Kevin",        "Matthew",      "Maverick",     "Nathaniel",
             "Jade",     "Kaylee",   "Kylie",        "Lucy",         "Melanie",      "Naomi",
             "Phoebe",   "Poppy",    "Primerose",    "Jane",         "James",        "John",
             "Joseph",   "Mary",     "Robert",       "Sarah",        "Joey",         "Justin"
         };
 
-        public static string[] surname =
+        public static string [] surname =
         {
             "Smith",        "Jones",        "Murphy",   "Smith",    "O'Kelly",      "Johnson",
             "Williams",     "O'Sullivan",   "Brown",    "Walsh",    "Taylor",       "Davies",
@@ -25,7 +24,7 @@
         /// <summary>
         ///     Generate randon names to seed in database.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An array of random patients</returns>
         public static Patient[] GenerateRandomPatients()
         {
             Patient[] arrayPatient = new Patient[SharedVariables.NumberOfPatients];
